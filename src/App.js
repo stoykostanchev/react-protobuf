@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 
+const AssetContainer = component => component;
 const Summary = () => (
   <div className="asset-summary">
     <div className="container">
@@ -17,6 +18,7 @@ const Summary = () => (
     </div>
   </div>
 );
+const SummaryContainer = AssetContainer(Summary);
 
 const AssetPicker = () => (
   <ul className="asset-picker">
@@ -50,6 +52,7 @@ const AssetPicker = () => (
     </li>
   </ul>
 );
+const AssetPickerContainer = AssetContainer(AssetPicker);
 
 const AssetPreview = () => (
   <ul className="asset-preview">
@@ -87,18 +90,19 @@ const AssetPreview = () => (
     </li>
   </ul>
 );
+const AssetPreviewContainer = AssetContainer(AssetPreview);
 
 const App = () => (
   <div className="wrapper">
-    <Summary></Summary>
+    <SummaryContainer></SummaryContainer>
     <div className="container asset-builder">
       <div className="row">
         <div className="col-4">
-          <AssetPicker></AssetPicker>
+          <AssetPickerContainer></AssetPickerContainer>
         </div>
         <div className="col-8">
           <h2>Learning Assets Preview</h2>
-          <AssetPreview></AssetPreview>
+          <AssetPreviewContainer></AssetPreviewContainer>
         </div>
       </div>
     </div>
