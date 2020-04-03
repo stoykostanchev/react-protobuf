@@ -2,7 +2,7 @@ import React from "react";
 
 const Asset = El => item => (
   <El
-    className={`asset type-${item.type.toLowerCase()}`}
+    className={`asset type-${item.type.toLowerCase().replace(" ", "_")}`}
     key={item.id}
     item={item}
   >

@@ -77,6 +77,10 @@ li.type-video {
   background: #f14b5a;
 }
 
+li.type-online_course {
+  background: #57739f;
+}
+
 button.remove-asset {
   position: absolute;
   top: 2px;
