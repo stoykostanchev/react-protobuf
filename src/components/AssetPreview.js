@@ -1,9 +1,10 @@
 import React from "react";
 import Asset from "./Asset";
 import store from "../store";
+import { useDrop } from "react-dnd";
 
 const itemView = item =>
-  Asset("li", () => (
+  Asset({ El: "li" }, () => (
     <button
       key={item.id}
       className="remove-asset"
@@ -16,7 +17,14 @@ const itemView = item =>
   ))(item);
 
 const AssetPreview = ({ selectedItems }) => {
-  return <ul className="asset-preview">{selectedItems.map(itemView)}</ul>;
+  const [, drop] = useDrop({
+    accept: "ASSET_DRAG"
+  });
+  return (
+    <ul ref={drop} className="asset-preview">
+      {selectedItems.map(itemView)}
+    </ul>
+  );
 };
 
 export default AssetPreview;
