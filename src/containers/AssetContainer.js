@@ -6,14 +6,18 @@ const dummyItemGen = (_, i) => ({
 });
 
 const AssetContainer = component => () => {
-  const selectedItems = new Array(4).fill(1).map(dummyItemGen);
-  selectedItems[0].type = "Article";
-  selectedItems[1].type = "Article";
-  selectedItems[2].type = "Document";
+  const items = new Array(8).fill(1).map(dummyItemGen);
+  items[4].type = "Article";
+  items[5].type = "Article";
+  items[6].type = "Document";
 
   return component({
-    items: new Array(4).fill(1).map(dummyItemGen),
-    selectedItems
+    itemsMap: items.reduce((acc, i) => {
+      acc[i.id] = i;
+      return acc;
+    }, {}),
+    items: [0, 1, 2, 3],
+    selectedItems: [4, 5, 6, 7]
   });
 };
 

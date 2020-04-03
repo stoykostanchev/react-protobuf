@@ -7,16 +7,7 @@ const SummaryCategory = catsMap => cat => [
   </span>
 ];
 
-const Summary = () => {
-  const { totalCount, categoriesMap } = {
-    totalCount: 4,
-    categoriesMap: {
-      Articles: 2,
-      Documents: 1,
-      Video: 1
-    }
-  };
-
+const Summary = ({ totalCount, categoriesMap }) => {
   return (
     <div className="asset-summary">
       <div className="container">
