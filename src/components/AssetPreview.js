@@ -1,5 +1,5 @@
 import React from "react";
-import { dummyItemGen } from "./AssetPicker";
+import { dummyItemGen } from "../containers/AssetContainer";
 import Asset from "./Asset";
 
 const itemView = item => [
