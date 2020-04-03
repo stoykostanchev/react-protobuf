@@ -1,17 +1,31 @@
 import React from "react";
 
+const SummaryCategory = catsMap => cat => [
+  catsMap[cat] + "x",
+  <span className="info" key={cat}>
+    {cat}
+  </span>
+];
+
 const Summary = () => {
+  const { totalCount, categoriesMap } = {
+    totalCount: 4,
+    categoriesMap: {
+      Articles: 2,
+      Documents: 1,
+      Video: 1
+    }
+  };
+
   return (
     <div className="asset-summary">
       <div className="container">
         <div className="row">
           <div className="col-6 asset-summary-left">
-            <span>4 assets</span>
+            <span>{totalCount} assets</span>
           </div>
           <div className="col-6 asset-summary-right">
-            2x<span className="info">Articles</span>
-            1x<span className="info">Documents</span>
-            1x<span className="info">Video</span>
+            {Object.keys(categoriesMap).map(SummaryCategory(categoriesMap))}
           </div>
         </div>
       </div>
