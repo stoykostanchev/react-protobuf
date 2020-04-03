@@ -3,18 +3,23 @@ import Asset from "./Asset";
 import store from "../store";
 import { useDrop } from "react-dnd";
 
-const itemView = item =>
-  Asset({ El: "li" }, () => (
-    <button
-      key={item.id}
-      className="remove-asset"
-      onClick={() => {
-        store.dispatch({ type: "DESELECT_ASSET", payload: item.id });
-      }}
-    >
-      x
-    </button>
-  ))(item);
+const itemView = Asset(props => {
+  const { item } = props;
+  return (
+    <li {...props}>
+      {props.children}
+      <button
+        key={item.id}
+        className="remove-asset"
+        onClick={() => {
+          store.dispatch({ type: "DESELECT_ASSET", payload: item.id });
+        }}
+      >
+        x
+      </button>
+    </li>
+  );
+});
 
 const AssetPreview = ({ selectedItems }) => {
   const [, drop] = useDrop({

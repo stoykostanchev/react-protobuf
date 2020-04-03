@@ -25,6 +25,13 @@ const getInitialState = () => {
 
 // redux logic
 const reducer = (state, action) => {
+  if (action.type === "SELECT_ASSET") {
+    return {
+      ...state,
+      items: state.items.filter(i => i !== action.payload),
+      selectedItems: [action.payload, ...state.selectedItems]
+    };
+  }
   if (action.type === "DESELECT_ASSET") {
     return {
       ...state,
