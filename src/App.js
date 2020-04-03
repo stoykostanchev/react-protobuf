@@ -17,42 +17,47 @@ const Summary = () => (
     </div>
   </div>
 );
+
+const AssetPicker = () => (
+  <ul className="asset-picker">
+    <li className="asset type-video">
+      <h2>Dummy asset name</h2>
+      <p>
+        <span className="info">4 minutes</span>
+        <span className="info">Video</span>
+      </p>
+    </li>
+    <li className="asset type-video">
+      <h2>Dummy asset name</h2>
+      <p>
+        <span className="info">4 minutes</span>
+        <span className="info">Video</span>
+      </p>
+    </li>
+    <li className="asset type-video">
+      <h2>Dummy asset name</h2>
+      <p>
+        <span className="info">4 minutes</span>
+        <span className="info">Video</span>
+      </p>
+    </li>
+    <li className="asset type-video">
+      <h2>Dummy asset name</h2>
+      <p>
+        <span className="info">4 minutes</span>
+        <span className="info">Video</span>
+      </p>
+    </li>
+  </ul>
+);
+
 const App = () => (
   <div className="wrapper">
     <Summary></Summary>
     <div className="container asset-builder">
       <div className="row">
         <div className="col-4">
-          <ul className="asset-picker">
-            <li className="asset type-video">
-              <h2>Dummy asset name</h2>
-              <p>
-                <span className="info">4 minutes</span>
-                <span className="info">Video</span>
-              </p>
-            </li>
-            <li className="asset type-video">
-              <h2>Dummy asset name</h2>
-              <p>
-                <span className="info">4 minutes</span>
-                <span className="info">Video</span>
-              </p>
-            </li>
-            <li className="asset type-video">
-              <h2>Dummy asset name</h2>
-              <p>
-                <span className="info">4 minutes</span>
-                <span className="info">Video</span>
-              </p>
-            </li>
-            <li className="asset type-video">
-              <h2>Dummy asset name</h2>
-              <p>
-                <span className="info">4 minutes</span>
-                <span className="info">Video</span>
-              </p>
-            </li>
-          </ul>
+          <AssetPicker></AssetPicker>
         </div>
         <div className="col-8">
           <h2>Learning Assets Preview</h2>
