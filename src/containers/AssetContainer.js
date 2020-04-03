@@ -1,4 +1,4 @@
-export const dummyItemGen = (_, i) => ({
+const dummyItemGen = (_, i) => ({
   id: i,
   name: "Dummy asset name!",
   duration: 4,
@@ -6,8 +6,14 @@ export const dummyItemGen = (_, i) => ({
 });
 
 const AssetContainer = component => () => {
+  const selectedItems = new Array(4).fill(1).map(dummyItemGen);
+  selectedItems[0].type = "Article";
+  selectedItems[1].type = "Article";
+  selectedItems[2].type = "Document";
+
   return component({
-    items: new Array(4).fill(1).map(dummyItemGen)
+    items: new Array(4).fill(1).map(dummyItemGen),
+    selectedItems
   });
 };
 
