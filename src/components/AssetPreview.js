@@ -1,8 +1,9 @@
 import React from "react";
-import { AssetPickerItem, dummyItemGen } from "./AssetPicker";
+import { dummyItemGen } from "./AssetPicker";
+import Asset from "./Asset";
 
 const itemView = item => [
-  AssetPickerItem("li")(item),
+  Asset("li")(item),
   <button key={item.id} className="remove-asset">
     x
   </button>

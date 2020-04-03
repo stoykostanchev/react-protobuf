@@ -1,14 +1,5 @@
 import React from "react";
-
-export const AssetPickerItem = Cmp => item => (
-  <Cmp className={`asset type-${item.type.toLowerCase()}`} key={item.id}>
-    <h2>{item.name}</h2>
-    <p>
-      <span className="info">{item.duration} minutes</span>
-      <span className="info">{item.type}</span>
-    </p>
-  </Cmp>
-);
+import Asset from "./Asset";
 
 export const dummyItemGen = (_, i) => ({
   id: i,
@@ -20,7 +11,7 @@ export const dummyItemGen = (_, i) => ({
 const AssetPicker = () => {
   const items = new Array(4).fill(1).map(dummyItemGen);
 
-  return <ul className="asset-picker">{items.map(AssetPickerItem("li"))}</ul>;
+  return <ul className="asset-picker">{items.map(Asset("li"))}</ul>;
 };
 
 export default AssetPicker;
