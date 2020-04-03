@@ -1,16 +1,8 @@
 import React from "react";
-import AssetPicker from "./components/AssetPicker";
-import Summary from "./components/Summary";
-import AssetPreview from "./components/AssetPreview";
-
 import "./App.css";
-
-const AssetContainer = component => component;
-const SummaryContainer = AssetContainer(Summary);
-
-const AssetPickerContainer = AssetContainer(AssetPicker);
-
-const AssetPreviewContainer = AssetContainer(AssetPreview);
+import SummaryContainer from "./containers/SummaryContainer";
+import AssetPreviewContainer from "./containers/AssetPreviewContainer";
+import AssetPickerContainer from "./containers/AssetPickerContainer";
 
 const App = () => (
   <div className="wrapper">
