@@ -1,24 +1,9 @@
-const dummyItemGen = (_, i) => ({
-  id: i,
-  name: "Dummy asset name!",
-  duration: 4,
-  type: "Video"
-});
+import { connect } from "react-redux";
 
-const AssetContainer = component => () => {
-  const items = new Array(8).fill(1).map(dummyItemGen);
-  items[4].type = "Article";
-  items[5].type = "Article";
-  items[6].type = "Document";
+const mapStateToProps = state => state;
 
-  return component({
-    itemsMap: items.reduce((acc, i) => {
-      acc[i.id] = i;
-      return acc;
-    }, {}),
-    items: [0, 1, 2, 3],
-    selectedItems: [4, 5, 6, 7]
-  });
+const AssetContainer = component => {
+  return connect(mapStateToProps)(component);
 };
 
 export default AssetContainer;
