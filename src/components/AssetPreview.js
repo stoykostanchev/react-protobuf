@@ -1,6 +1,7 @@
 import React from "react";
 import Asset from "./Asset";
 import { useDrop } from "react-dnd";
+import { ASSET_DRAG } from "../constants";
 
 const itemView = (deselectItem) =>
   Asset((props) => {
@@ -21,7 +22,7 @@ const itemView = (deselectItem) =>
 
 const AssetPreview = ({ selectedItems, deselectItem }) => {
   const [, drop] = useDrop({
-    accept: "ASSET_DRAG",
+    accept: ASSET_DRAG,
   });
   return (
     <ul ref={drop} className="asset-preview">

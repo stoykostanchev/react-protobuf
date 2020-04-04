@@ -1,6 +1,7 @@
 import React from "react";
 import Asset from "./Asset";
 import { useDrag } from "react-dnd";
+import { ASSET_DRAG } from "../constants";
 
 const AssetPicker = ({ items, selectItem }) => {
   return (
@@ -9,7 +10,7 @@ const AssetPicker = ({ items, selectItem }) => {
         Asset((props) => {
           const [, drag] = useDrag({
             item: {
-              type: "ASSET_DRAG",
+              type: ASSET_DRAG,
               id: props.item.id,
             },
             end: (props) => {
