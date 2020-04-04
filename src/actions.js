@@ -18,3 +18,7 @@ export const getJokes = () => (dispatch) =>
   });
 
 export const changeActiveJoke = () => ({ type: "CHANGED_ACTIVE_JOKE" });
+
+export const selectAsset = (id) => ({ type: "SELECT_ASSET", payload: id });
+
+export const deselectAsset = (id) => ({ type: "DESELECT_ASSET", payload: id });
