@@ -1,4 +1,5 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 import items from "./assets";
 
 const getInitialState = () => {
@@ -46,6 +47,6 @@ const reducer = (state, action) => {
   return state;
 };
 
-const store = createStore(reducer, getInitialState());
+const store = createStore(reducer, getInitialState(), applyMiddleware(thunk));
 
 export default store;

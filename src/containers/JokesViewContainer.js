@@ -2,10 +2,10 @@ import JokesView from "../components/JokesView";
 import { connect } from "react-redux";
 import { getJokes, changeActiveJoke } from "./../actions";
 
-const mapDispatchToProperties = () => {
+const mapDispatchToProperties = (dispatch) => {
   return {
-    loadJokes: getJokes,
-    changeActiveJoke,
+    loadJokes: () => dispatch(getJokes()),
+    changeActiveJoke: () => dispatch(changeActiveJoke()),
   };
 };
 

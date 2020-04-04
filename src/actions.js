@@ -1,5 +1,4 @@
 import { JokesRequest, JokerClient } from "./proto/joke_grpc_web_pb";
-import store from "./store";
 
 const GRPC_WEB_HOST = "http://localhost:3000";
 const JokerClientInstance = new JokerClient(GRPC_WEB_HOST);
@@ -9,14 +8,13 @@ export const completeGetJokes = (jokes) => ({
   payload: jokes,
 });
 
-export const getJokes = () =>
+export const getJokes = () => (dispatch) =>
   JokerClientInstance.getJokes(new JokesRequest(), {}, (err, response) => {
     if (!err) {
-      store.dispatch(
+      dispatch(
         completeGetJokes(response.getJokesList().map((j) => j.toObject()))
       );
     }
   });
 
-export const changeActiveJoke = () =>
-  store.dispatch({ type: "CHANGED_ACTIVE_JOKE" });
+export const changeActiveJoke = () => ({ type: "CHANGED_ACTIVE_JOKE" });
