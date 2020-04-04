@@ -1,4 +1,5 @@
 import React from "react";
+import JokesViewContainer from "./containers/JokesViewContainer";
 import "./App.css";
 import SummaryContainer from "./containers/SummaryContainer";
 import AssetPreviewContainer from "./containers/AssetPreviewContainer";
@@ -13,6 +14,7 @@ const App = () => (
           <AssetPickerContainer></AssetPickerContainer>
         </div>
         <div className="col-8">
+          <JokesViewContainer />
           <h2>Learning Assets Preview</h2>
           <AssetPreviewContainer></AssetPreviewContainer>
         </div>

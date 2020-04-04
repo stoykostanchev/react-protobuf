@@ -7,13 +7,28 @@ const getInitialState = () => {
       acc[i.id] = i;
       return acc;
     }, {}),
-    selectedItems: []
     items: items.map((i) => i.id),
+    selectedItems: [],
+    jokes: [],
+    activeJoke: 0,
   };
 };
 
 // redux logic
 const reducer = (state, action) => {
+  if (action.type === "CHANGED_ACTIVE_JOKE") {
+    const aji = state.activeJoke + 1;
+    return {
+      ...state,
+      activeJoke: aji > state.jokes.length ? 0 : aji,
+    };
+  }
+  if (action.type === "GOT_JOKES") {
+    return {
+      ...state,
+      jokes: action.payload,
+    };
+  }
   if (action.type === "SELECT_ASSET") {
     return {
       ...state,

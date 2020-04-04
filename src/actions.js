@@ -17,3 +17,6 @@ export const getJokes = () =>
       );
     }
   });
+
+export const changeActiveJoke = () =>
+  store.dispatch({ type: "CHANGED_ACTIVE_JOKE" });
