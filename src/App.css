@@ -43,8 +43,13 @@
   border-radius: 5px;
 }
 
+.asset-picker .asset {
+  cursor: grab;
+}
+
 .asset-preview {
   padding: 20px;
+  min-height: 300px;
   list-style: none;
   margin: 0;
 }

@@ -13,8 +13,10 @@ const AssetPicker = ({ items, selectItem }) => {
               type: ASSET_DRAG,
               id: props.item.id,
             },
-            end: (props) => {
-              selectItem(props.id);
+            end: (props, monitor) => {
+              if (monitor.didDrop()) {
+                selectItem(props.id);
+              }
             },
           });
           return (
