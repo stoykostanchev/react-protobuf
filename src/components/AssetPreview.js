@@ -21,7 +21,7 @@ const itemView = (deselectItem) =>
 
 const AssetPreview = ({ selectedItems, deselectItem }) => {
   const [, drop] = useDrop({
-    accept: "ASSET_DRAG"
+    accept: "ASSET_DRAG",
   });
   return (
     <ul ref={drop} className="asset-preview">
