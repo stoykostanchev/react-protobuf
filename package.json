@@ -2,8 +2,11 @@
   "name": "frontend-test",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "bootstrap": "^4.1.2",
+    "google-protobuf": "^3.11.4",
+    "grpc-web": "^1.0.7",
     "react": "^16.13.1",
     "react-dnd": "^10.0.2",
     "react-dnd-html5-backend": "^10.0.2",

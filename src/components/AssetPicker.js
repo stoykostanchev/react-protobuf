@@ -2,7 +2,10 @@ import React from "react";
 import Asset from "./Asset";
 import { useDrag } from "react-dnd";
 
-const AssetPicker = ({ items, selectItem }) => {
+const AssetPicker = ({ items, selectItem, loadExtraItems }) => {
+  React.useEffect(() => {
+    loadExtraItems();
+  }, []);
   return (
     <ul className="asset-picker">
       {items.map(
