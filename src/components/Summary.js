@@ -1,10 +1,10 @@
 import React from "react";
 
-const SummaryCategory = catsMap => cat => [
+const SummaryCategory = (catsMap) => (cat) => [
   catsMap[cat] + "x",
   <span className="info" key={cat}>
     {cat}
-  </span>
+  </span>,
 ];
 
 const Summary = ({ totalCount, categoriesMap }) => {
