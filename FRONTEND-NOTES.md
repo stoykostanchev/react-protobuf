@@ -1,10 +1,12 @@
 Name: Stoyko Stanchev
+
 Email: stoykostanchev@gmail.com
+
 Time to complete: 5 days
 
-Notes:
+# NOTES
 
-** Project structure **
+## Project structure
 
 `src/components` contains stateless components that have no local state, accept props and render accordingly
 
@@ -12,7 +14,7 @@ Notes:
 
 `src/store`, `src/actions` contain the redux store and actions of the app
 
-** Architecture **
+## Architecture
 
 The app is split into purely presentational dummy components and headless components (containers) that provide the state to the presentational components.
 Showcased are both using redux connect and using a standard higher order component for the state.
@@ -21,7 +23,7 @@ Jokes are loaded and shown in a view of their own
 Redux thunk is used to showcase one of the many options to make action creators store agnostic
 Scaffolded code for a gRPC-web client can be found in the './proto' folder.
 
-** Alternatives **
+## Alternatives
 
 The approach used (splitting components from their data source) is one of the mainstream approaches out there. Another one having the data source exist in the same file. That is an absolutely viable approach. I personally prefer using classes and decorators if I am doing that. In general I do like splitting the state from the component a bit more - feels more framework agnostic, the component could be a different type (e.g. native web component for example), testing could be performed on the data layer only. It's also a bit easier to showcase components in a design system, e.g. a storybook.
 
@@ -33,11 +35,11 @@ There are different ways to express the fact that items in the preview are the s
 
 The store could be split into different modules - e.g. having a module for jokes only, and another one for general assets.
 
-** Shortcuts **
+## Shortcuts
 
 Tests not written. I felt that the state transformations were relatively simple and the project would not need maintenance, so I considered these not to be useful for the task at hand.
 
-** Extra things that would be nice for a larger **
+## Extra things that would be nice for a larger
 
 Using typescript or at least [PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html)
 
@@ -47,6 +49,6 @@ Publishing and maintaining components separately from the main app is a good ide
 
 Integration with any redux dev tools and sanity checking time travel has been skipped and might need an extra line or two
 
-** Others **
+## Others
 
 I was rather disappointed by the lack of a deeper integration between protobufs, web browsers as clients and redux. It does seem like general framework integration is on the [roadmap](https://github.com/grpc/grpc-web/blob/master/ROADMAP.md). It would make sense for angular to be the first to get more in-depth support though, both proto and angular being google's children. On the other hand, graphql and react being both facebook's, I would not be surprised if other state management tools can be used to integrate graphql and react. An alternative I have listed to do some research is [Apollo](https://www.apollographql.com/docs/).
