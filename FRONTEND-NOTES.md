@@ -22,6 +22,7 @@ One way DnD is shown
 Jokes are loaded and shown in a view of their own
 Redux thunk is used to showcase one of the many options to make action creators store agnostic
 Scaffolded code for a gRPC-web client can be found in the './proto' folder.
+Note: the frontend expects the backend to exist on port 8080 -> that is where the requests are proxied to
 
 ## Alternatives
 
